@@ -1,7 +1,9 @@
+
+
 import './App.css';
 import authorizeSpotify from './components/data/auth';
 
-authorizeSpotify()
+const url = authorizeSpotify()
 
 function App() {
   return (
