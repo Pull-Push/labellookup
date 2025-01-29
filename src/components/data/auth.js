@@ -13,6 +13,7 @@ function authorizeSpotify(){
     url += '&scope=' + encodeURIComponent(scope);
     url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
     
+    return url
 }
 
 export default authorizeSpotify

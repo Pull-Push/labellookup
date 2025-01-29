@@ -1,15 +1,16 @@
-
-
 import './App.css';
-import authorizeSpotify from './components/data/auth';
-
-const url = authorizeSpotify()
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import HomeRender from './components/Home';
+import LandingRender from './components/Landing';
 
 function App() {
   return (
-    <div className="App">
-      <h1>I'm here now</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<LandingRender /> } />
+        <Route path="/callback" element={<HomeRender /> } />
+      </Routes>
+    </Router>
   );
 }
 
