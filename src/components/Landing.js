@@ -1,14 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { authorizeSpotify } from "./data/auth";
 
-import authorizeSpotify from "./data/auth"
+function handleClick(){
+    authorizeSpotify()
+}
+
+console.log('landing')
 
 function LandingRender(){
-    const url = authorizeSpotify()
-    window.location.replace(url)
     return(
         <div className="landing">
-            <h1>Loading</h1>
+            <h1>Welcome to LabelLookup</h1>
+            <button onClick={handleClick}>Log In</button>
         </div>
     )
 }

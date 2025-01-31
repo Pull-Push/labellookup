@@ -1,18 +1,28 @@
-import getProfile from "./data/profile"
-// http://localhost:3000/callback#access_token=BQAIcf3dfSy9xnY_zSuzNB2bc8I2nLzr5nebARBEY2B21a-kSrEHph_csLObS54Z4fSeBfU43JKpt53TpnZnuXjoo0snj78WFgYywVySBRtsGQLLj-Jst8ATSdWW0CLSiJ2XaCP4FD_xtCPxLO-mBl_Z_dLfKlP4vhsv3fUQq7opnfdHSS-QttLKkcq6_g5HVabU6s9LdyOZf9SJWJiM6SoJrET8O_OMQQ&token_type=Bearer&expires_in=3600
+import React, { useState, useEffect } from "react";
+import { getProfile } from "./data/auth"
 
-const fullUrl = window.location.href
-const important = fullUrl.split('=')
-let token = important[1].split('&')
-token = token[0]
 
-const userData = await getProfile(token)
+function handleClick(){
+    alert('Logged out')
+    window.location.replace('http://localhost:3000/')
+}
 
 function HomeRender(){
-    console.log(userData)
+    const [profile, setProfile ] = useState('test')
+    useEffect(() => {
+        async function fetchProfile() {
+            const url = window.location.href; // Get the current URL
+            const data = await getProfile(url);
+            setProfile(data);
+        }
+        fetchProfile();
+    }, []);
+    
+    console.log('this is the state profile', profile);
     return(
         <div className="home">
-            <h2>Welcome, {userData.display_name}</h2>
+            <button onClick={handleClick}>Log Out</button>
+            <h2>Welcome, {profile.display_name}</h2>
         </div>
     )
 }
