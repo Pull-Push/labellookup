@@ -1,5 +1,3 @@
-import React from 'react'
-
 export function authorizeSpotify(){
 
     const client_id = 'b46da389980344068d6ec1df964b45a9';
@@ -12,6 +10,7 @@ export function authorizeSpotify(){
     url += '&client_id=' + encodeURIComponent(client_id);
     url += '&scope=' + encodeURIComponent(scope);
     url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
+    url += '&show_dialog=true'
     
 
     window.location.replace(url)
@@ -23,7 +22,7 @@ export async function getProfile(url){
         const important = url.split('=')
         let token = important[1].split('&')
         token = token[0]
-
+        localStorage.setItem('token', token)
         const response  = await fetch('https://api.spotify.com/v1/me', {
             headers:{
                 Authorization: 'Bearer '+ token
@@ -35,3 +34,8 @@ export async function getProfile(url){
     
         return data
     }
+
+export function logOut(){
+    alert('Successfully Logged Out')
+    window.location.replace('/')
+}

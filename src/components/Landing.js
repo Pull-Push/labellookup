@@ -13,7 +13,7 @@ function LandingRender(){
         <div className="landing">
             <h1>Welcome to LabelLookup</h1>
             <button onClick={handleClick}>Log In</button>
-        </div>
+            </div>
     )
 }
 export default LandingRender
