@@ -24,7 +24,7 @@ function HomeRender(){
 
     }, []);
     
-    console.log('this is the state profile', profile);
+    // console.log('this is the state profile', profile);
     return(
         <div className="home">
             <div className="header">

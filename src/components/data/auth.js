@@ -18,7 +18,7 @@ export function authorizeSpotify(){
 }
 
 export async function getProfile(url){
-        console.log('from profile', url)
+        // console.log('from profile', url)
         const important = url.split('=')
         let token = important[1].split('&')
         token = token[0]
@@ -30,7 +30,7 @@ export async function getProfile(url){
         });
     
         const data = await response.json();
-        console.log('prof data', data)
+        // console.log('prof data', data)
     
         return data
     }

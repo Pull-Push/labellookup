@@ -23,7 +23,7 @@ export default function SearchBar(){
             <input type="text" id="searchField" placeholder="Artist Name..."/>
             <input type="button" value="Search" onClick={ musicData }/>
         </div>
-        <SearchResults props={music}/>
+        <SearchResults data={music}/>
         </>
     )
 }
