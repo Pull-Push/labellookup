@@ -4,21 +4,10 @@ export default function SearchResults(props){
     // {data:{albums:{}, artists:{}}}
     let artistNames = []
     const [artistData, setArtistData ] = useState({data:null})
-    console.log('results', props)
     
     useEffect(() => {
-        if(props.data == null){
-            console.log('null data')
-        }else{
-            console.log('valid data', props.data)
-        }
-        
-        setArtistData(props);
-        
+        setArtistData(props); 
     },[props])
-    
-    console.log('artistData', artistData)
-    // console.log('artistData drilled', artistData.data.artists.items[0].name)
     
     if(artistData.data !== null ){
         console.log('found data')

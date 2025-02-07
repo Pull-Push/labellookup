@@ -3,7 +3,7 @@ export function authorizeSpotify(){
     const client_id = 'b46da389980344068d6ec1df964b45a9';
     const redirect_uri = 'http://localhost:3000/callback';
 
-    const scope = 'user-read-private user-read-email';
+    const scope = 'user-read-private user-read-email playlist-read-private playlist-modify-public playlist-modify-private';
 
     let url = 'https://accounts.spotify.com/authorize';
     url += '?response_type=token';
