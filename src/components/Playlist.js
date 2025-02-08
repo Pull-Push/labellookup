@@ -12,7 +12,7 @@ export default function Playlists(props){
         getLists();
     }, []);
 
-    if(playlists.length == 0){
+    if(playlists.length === 0){
         console.log('nothing yet.....')
         return
     }else{
@@ -22,7 +22,7 @@ export default function Playlists(props){
         }
     }
 
-    if(playlists.length == 0 ){
+    if(playlists.length === 0 ){
         return(
             <>
                 <h4>No playlists</h4>
@@ -31,11 +31,13 @@ export default function Playlists(props){
     } else 
     return(
         <>
-            <h4>playist data goes here</h4>
+            <h4>Playlists:</h4>
             {listNames.map((item, index) => (
                 <li key={index}> {item} </li>
             ))
             }
+            <button>Prev Page</button>
+            <button>Next Page</button>
         </>
     )
 }

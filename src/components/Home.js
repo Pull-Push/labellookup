@@ -8,7 +8,7 @@ import SearchBar from "./SearchBar";
 
 
 
-function handleClick(){
+function handleLogout(){
     logOut()
 }
 
@@ -32,19 +32,19 @@ function HomeRender(){
     return(
         <div className="home">
             <div className="header">
-            <button onClick={ handleClick }>Log Out</button>
+            <button onClick={ handleLogout }>Log Out</button>
             <h2>Welcome, {profile.display_name}</h2>
             <p>email: {profile.email}</p>
             <p>id: {profile.id}</p>
             <img src={profileImg} alt="profile image" />
             <p>followers:{profFollowers}</p>
             </div>
-            <div>
-                <Playlists profile={profile}/>
-            </div>
             <div className="searchDiv">
                 <SearchBar />
 
+            </div>
+            <div className="='playListDiv">
+                <Playlists profile={profile}/>
             </div>
         </div>
     )

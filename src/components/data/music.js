@@ -35,3 +35,8 @@ export async function playlistInit() {
     return playlistData
 }
 
+export function details(value){
+    const clicked = value;
+    alert(`${clicked} was clicked`)
+    return
+} 
