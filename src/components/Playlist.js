@@ -22,7 +22,7 @@ export default function Playlists(props){
         }
     }
 
-    if(playlists.length === 0 ){
+    if(playlists.length === 0 || !playlists ){
         return(
             <>
                 <h4>No playlists</h4>
