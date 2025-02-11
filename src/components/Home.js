@@ -21,9 +21,15 @@ function HomeRender(){
         async function fetchProfile() {
             const url = window.location.href; // Get the current URL
             const data = await getProfile(url);
-            setProfileImg(data.images[1].url);
             setProfFollowers(data.followers.total);
             setProfile(data);
+
+            if(data.images.length === 0){
+                console.log('no image found')
+                setProfileImg(null)
+            }else{
+            setProfileImg(data.images[1].url);
+            }
         }
         fetchProfile();
     }, []);

@@ -12,7 +12,7 @@ export default function Playlists(props){
         getLists();
     }, []);
 
-    if(playlists.length === 0){
+    if(playlists.length === 0 || !playlists.items){
         console.log('nothing yet.....')
         return
     }else{
@@ -22,7 +22,7 @@ export default function Playlists(props){
         }
     }
 
-    if(playlists.length === 0 || !playlists ){
+    if(playlists.length === 0 || !playlists.items ){
         return(
             <>
                 <h4>No playlists</h4>
