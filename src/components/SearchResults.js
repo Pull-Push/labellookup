@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { details } from "./data/music";
+import { details, fetchLabel } from "./data/music";
 
 export default function SearchResults(props) {
 	let artistNames = [];
@@ -13,6 +13,7 @@ export default function SearchResults(props) {
 
     function handleDetails(e){
         alert(`clicked ${e.target.innerText}`)
+		fetchLabel(e.target.innerText)
         console.log(e.target.innerText)
     }
 

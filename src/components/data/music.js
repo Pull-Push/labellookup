@@ -40,3 +40,24 @@ export function details(value){
     alert(`${clicked} was clicked`)
     return
 } 
+
+export async function getLabel(props) {
+    console.log('get label', props)
+    let key = 'ejzkmaEZPkIfWFdCVuHF'
+    let secret = 'PJEBjPFGAkNUqBfzrpPwOwQdMYYAoXMH'
+    const response  = await fetch(`https://api.discogs.com/database/search?q=${props}`, {
+        headers:{
+            Authorization: `Discogs key=${key}, secret=${secret}`
+        }
+    });
+    const labelData = await response.json();
+    console.log('labelData', labelData)
+    return labelData
+
+}
+
+export async function fetchLabel(props) {
+    console.log('fetch label', props)
+    const labelData = await getLabel(props)
+    return labelData
+}
