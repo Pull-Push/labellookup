@@ -45,7 +45,7 @@ export async function getLabel(props) {
     console.log('get label', props)
     let key = 'ejzkmaEZPkIfWFdCVuHF'
     let secret = 'PJEBjPFGAkNUqBfzrpPwOwQdMYYAoXMH'
-    const response  = await fetch(`https://api.discogs.com/database/search?q=${props}`, {
+    const response  = await fetch(`https://api.discogs.com/database/search?q=${props}?page=1&per_page=100`, {
         headers:{
             Authorization: `Discogs key=${key}, secret=${secret}`
         }
