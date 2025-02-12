@@ -7,15 +7,18 @@ export default function SearchResults(props) {
 	let trackNames = [];
 	let albumNames = [];
 	const [artistData, setArtistData] = useState({ data: null });
+	const [ labelData, setLabelData ] = useState(null)
 
 	useEffect(() => {
 		setArtistData(props);
 	}, [props]);
 
-    function handleDetails(e){
+    async function handleDetails(e){
         alert(`clicked ${e.target.innerText}`)
-		fetchLabel(e.target.innerText)
+		const labelData = await fetchLabel(e.target.innerText)
+		setLabelData(labelData)
         console.log(e.target.innerText)
+		return labelData
     }
 
 
@@ -81,7 +84,7 @@ export default function SearchResults(props) {
 				</div>
                 </div>
 				<div className="labelResults">
-						<LabelInfo />
+						<LabelInfo labelData={labelData}/>
 				</div>
 			</>
 		);
