@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { details, fetchLabel } from "./data/music";
+import LabelInfo from "./LabelInfo";
 
 export default function SearchResults(props) {
 	let artistNames = [];
@@ -79,6 +80,9 @@ export default function SearchResults(props) {
                     <button>Next Page</button>
 				</div>
                 </div>
+				<div className="labelResults">
+						<LabelInfo />
+				</div>
 			</>
 		);
 }
